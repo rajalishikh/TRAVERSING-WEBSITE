@@ -9,15 +9,34 @@ for (let card of cards){
         // calculate the count place 
         count=count+1;
         let count_of_traveling_place=find_id('count_total_travel_place',count)
-        // find the total budget 
+        // find the touring place price
         let find_traverse_place_price=e.target.parentNode.childNodes[3].childNodes[1].innerText
+        console.log('total price traversing place',find_traverse_place_price)
+        // converted the touring place price
         let convert_find_traverse_place=parseInt(find_traverse_place_price)
 
         // removing the budget after buy touring place 
         let total_budget_price= find_id_value('total_budget') - convert_find_traverse_place
-        console.log('after money',total_budget_price)
+        
         // set the price in total budget 
         find_id('total_budget',total_budget_price)
+        // find_touring_place_name
+        let find_touring_place_name=e.target.parentNode.childNodes[1].innerText
+        console.log('touring_place_name :',find_touring_place_name)
+
+        // crete element in card section 
+        let find_created_place=document.getElementById('selected_place_name')
+        const ul=document.createElement('ul')
+        
+        const li=document.createElement('li')
+        const p1=document.createElement('p')
+        p1.innerText=find_touring_place_name
+        const p2=document.createElement('p')
+        p2.innerText=find_traverse_place_price
+        li.appendChild(p1)
+        li.appendChild(p2)
+       ul.appendChild(li)
+       find_created_place.appendChild(ul)
 
         
 
