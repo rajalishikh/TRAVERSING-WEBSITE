@@ -4,3 +4,10 @@ function find_id(event,value){
     id.innerText=value
 
 }
+
+// find the id value
+function find_id_value(element){
+    let x = document.getElementById(element).innerText
+    let y=parseInt(x)
+    return y
+}
