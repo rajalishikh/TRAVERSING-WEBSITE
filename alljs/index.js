@@ -44,12 +44,54 @@ for (let card of cards){
     let find_total_cost=find_id_value('total_cost');
     let final_total_cost_afterBuy=find_total_cost+convert_find_traverse_place;
     find_id('total_cost',final_total_cost_afterBuy)
+
+    // find the grant value 
+    Grand_total("gran_total",convert_find_traverse_place)
+
+
+    let find_grand_total_id=document.getElementById('gran_total').innerText
+    let converTed=parseInt(find_grand_total_id)
+    let total_value_grand_total=converTed+convert_find_traverse_place;
     
 
-        
 
-        
+    
+
+    let x=find_id_value('total_cost')
+
+    
        
         
     })
 }
+
+function Grand_total(id,value){
+
+    let find_grand_total_id=document.getElementById(id).innerText
+    let converTed=parseInt(find_grand_total_id)
+    let total_value_grand_total=converTed+value;
+    find_id('gran_total',total_value_grand_total)
+}
+
+function grand_total_after_booked_vehical(category){
+    let find_grand_total_id=document.getElementById('gran_total').innerText
+    let Int=parseInt(find_grand_total_id)
+    if(category === 'bus'){
+        find_id('gran_total',Int+100)
+
+    }
+    else if(category === 'train'){
+        find_id('gran_total',Int-200)
+
+    }
+    else if(category === 'flight'){
+        find_id('gran_total',Int+500)
+
+    }else{
+        find_id('gran_total',Int)
+    }
+
+
+}
+
+
