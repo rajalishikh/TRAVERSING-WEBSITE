@@ -20,6 +20,11 @@ for (let card of cards){
 
         // removing the budget after buy touring place 
         let total_budget_price= find_id_value('total_budget') - convert_find_traverse_place
+
+        if(total_budget_price<0){
+            alert('Your balance is finished ')
+            return
+        }
         
         // set the price in total budget 
         find_id('total_budget',total_budget_price)
