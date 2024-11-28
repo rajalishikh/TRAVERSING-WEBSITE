@@ -12,6 +12,9 @@ for (let card of cards){
         // find the touring place price
         let find_traverse_place_price=e.target.parentNode.childNodes[3].childNodes[1].innerText
         console.log('total price traversing place',find_traverse_place_price)
+        // find_touring_place_name
+        let find_touring_place_name=e.target.parentNode.childNodes[1].innerText
+        console.log('touring_place_name :',find_touring_place_name)
         // converted the touring place price
         let convert_find_traverse_place=parseInt(find_traverse_place_price)
 
@@ -20,9 +23,7 @@ for (let card of cards){
         
         // set the price in total budget 
         find_id('total_budget',total_budget_price)
-        // find_touring_place_name
-        let find_touring_place_name=e.target.parentNode.childNodes[1].innerText
-        console.log('touring_place_name :',find_touring_place_name)
+        
 
         // crete element in card section 
         let find_created_place=document.getElementById('selected_place_name')
@@ -37,6 +38,13 @@ for (let card of cards){
         li.appendChild(p2)
        ul.appendChild(li)
        find_created_place.appendChild(ul)
+       // crete element in card section end 
+
+    //    find the total cost 
+    let find_total_cost=find_id_value('total_cost');
+    let final_total_cost_afterBuy=find_total_cost+convert_find_traverse_place;
+    find_id('total_cost',final_total_cost_afterBuy)
+    
 
         
 
